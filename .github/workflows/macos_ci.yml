@@ -49,4 +49,9 @@ jobs:
           cpanm --notest Text::Diff
       - name: run it
         run: |
-            prove -v
+          testssl.sh -R --debug 1 https://81.169.166.184
+          cat /tmp/testssl.*/81.169.166.184.run_renego.errorlog
+          printf "%s\n" "----------"
+          printf "%s\n" "----------"
+          cat /tmp/testssl.*/81.169.166.184.run_renego.txt
+          
